@@ -1,0 +1,19 @@
+<!-- {%for test in tests%} {{test.test_name}} <br>{{test.test_text}} {%endfor%} -->
+<strong>lists of test</strong><br>
+<a href="{%url 'insert'%}">add new</a>
+<table>
+    <tr>
+        <th>name</th>
+        <th>text</th>
+    </tr>
+    {%for test in tests%}
+    <tr>
+        <td>{{test.test_name}}</td>
+        <td>{{test.test_text}}</td>
+
+        <td><a href="{%url 'remove' test.id %}">Delete</a></td>
+        <td><a href="{%url 'edit' test.id %}">edit</a></td>
+
+    </tr>
+    {%endfor%}
+</table>
